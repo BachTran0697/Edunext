@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block content 
+  h1 Update Item
+  form(method="post", action=`/customer/update/${customer._id}`, enctype="multipart/form-data")
+    input(type='hidden', name="_id", value=customer.id)
+    div 
+      label(for="email") Email
+      input#email(name='email', value=customer.email)
+    div 
+      label(for="fullname") Full name
+      input#fullname(name='fullname' value=customer.fullname)
+    div 
+      label(for="password") password
+      input#password(name='password' type='password' value=customer.password)
+    if customer.image !== undefined
+      div 
+        img(src=`images/${customer.image}`, style='width:100px;height:auto')
+    div 
+      label(for="image") Image
+      input#image(type='file', name='image')
+    div 
+      input(type='submit', value='Update')

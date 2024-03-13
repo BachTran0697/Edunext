@@ -1,0 +1,19 @@
+extends ../layout
+block content
+  h1 Create New Customer 
+  form(method="post", action="/customer/create", enctype="multipart/form-data")
+    div 
+      label(for="email") Email
+      input#email(name='email')
+    div 
+      label(for="fullname") Full name
+      input#fullname(name='fullname')
+    div 
+      label(for="password") password
+      input#password(name='password', type='password')
+    div 
+      label(for="image") Image
+      input#image(type='file', name='image')
+    div 
+      input(type="submit", value="Create")
+    

@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h3 
+    a(href='/customer/create') Create New
+  h1 Customer List 
+  table 
+    thead 
+      tr 
+        th id 
+        th Email 
+        th Fullname 
+        th Image
+        th Action
+    tbody 
+      if customers != ''
+        each item in customers
+          tr 
+            td= item.id 
+            td= item.email
+            td= item.fullname 
+            td 
+              img(src=`images/${item.image}`, style='width:100px;height:auto')
+            td
+              a(href=`/customer/update/${item.id}`) Update
+      else 
+        tr 
+          td(conlspan='4') No Data 

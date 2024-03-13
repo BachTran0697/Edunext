@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var customerRouter = require('./routes/customer');
 
 const mongoose = require("mongoose")
-mongoose.connect("mongodb://localhost:27017/demo")
+mongoose.connect("mongodb+srv://sa:123@mycluster.waz9mm6.mongodb.net/demo")
 
 var app = express();
 
